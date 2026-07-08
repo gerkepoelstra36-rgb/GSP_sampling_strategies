@@ -590,21 +590,36 @@ tot_Opt=np.array([test_strategy(j,bl,nruns,"Optimal") for j in graphs]).mean(axi
 # plt.title("Comparison of D-optimal design with and without greedy algorithm");
 
 # #%%
-# Fig 9abc
-# a:
-#plt.plot([i+1 for i in range(1,size)],tot_Agr[0])
-# b:
-#plt.plot([i+1 for i in range(1,size)],tot_Egr[0])
-# c:
-plt.plot([i+1 for i in range(1,size)],tot_Dgr[0])
+# # Fig 9abc
+# # a:
+# plt.plot([i+1 for i in range(1,size)],tot_Agr[0])
+# plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
+# plt.fill_between([i+1 for i in range(1,size)],tot_Agr[1],tot_Agr[2],alpha=.3)
+# plt.xlabel("Sample size")
+# plt.ylabel("log MSE")
+# plt.legend(["A-design", "optimal sample"])
+# plt.title("Comparison of A optimal design sampling versus the true optimum");
+# plt.show()
 
-# all:
-plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
-plt.fill_between([i+1 for i in range(1,size)],tot_Dgr[1],tot_Dgr[2],alpha=.3)
-plt.xlabel("Sample size")
-plt.ylabel("log MSE")
-plt.legend(["D-design", "optimal sample"])
-plt.title("Comparison of D optimal design sampling versus the true optimum");
+# # b:
+# plt.plot([i+1 for i in range(1,size)],tot_Egr[0])
+# plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
+# plt.fill_between([i+1 for i in range(1,size)],tot_Egr[1],tot_Egr[2],alpha=.3)
+# plt.xlabel("Sample size")
+# plt.ylabel("log MSE")
+# plt.legend(["E-design", "optimal sample"])
+# plt.title("Comparison of E optimal design sampling versus the true optimum");
+# plt.show()
+
+# # c:
+# plt.plot([i+1 for i in range(1,size)],tot_Dgr[0])
+# plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
+# plt.fill_between([i+1 for i in range(1,size)],tot_Dgr[1],tot_Dgr[2],alpha=.3)
+# plt.xlabel("Sample size")
+# plt.ylabel("log MSE")
+# plt.legend(["D-design", "optimal sample"])
+# plt.title("Comparison of D optimal design sampling versus the true optimum");
+# plt.show()
 
 # #%%
 # # Fig 10 (a for the full plot range, b for the zoomed in range between 5 and 9)
@@ -1909,41 +1924,3 @@ def Gamma_parameter_plot_size(Gtype: str, ngraphs, sz, ntrials, bandlim_ratio, m
 # ax1.set_xticks([])
 # ax1.set_title("Preferential attachment")
 # ax1.set_yticks([]);
-
-#%%
-# Fig 9abc
-# a:
-plt.plot([i+1 for i in range(1,size)],tot_Agr[0])
-
-# all:
-plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
-plt.fill_between([i+1 for i in range(1,size)],tot_Agr[1],tot_Agr[2],alpha=.3)
-plt.xlabel("Sample size")
-plt.ylabel("log MSE")
-plt.legend(["A-design", "optimal sample"])
-plt.title("Comparison of A optimal design sampling versus the true optimum");
-plt.show()
-
-# b:
-plt.plot([i+1 for i in range(1,size)],tot_Egr[0])
-
-# all:
-plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
-plt.fill_between([i+1 for i in range(1,size)],tot_Egr[1],tot_Egr[2],alpha=.3)
-plt.xlabel("Sample size")
-plt.ylabel("log MSE")
-plt.legend(["E-design", "optimal sample"])
-plt.title("Comparison of E optimal design sampling versus the true optimum");
-plt.show()
-
-# c:
-plt.plot([i+1 for i in range(1,size)],tot_Dgr[0])
-
-# all:
-plt.plot([i+1 for i in range(1,size)],tot_Opt[0])
-plt.fill_between([i+1 for i in range(1,size)],tot_Dgr[1],tot_Dgr[2],alpha=.3)
-plt.xlabel("Sample size")
-plt.ylabel("log MSE")
-plt.legend(["D-design", "optimal sample"])
-plt.title("Comparison of D optimal design sampling versus the true optimum");
-plt.show()

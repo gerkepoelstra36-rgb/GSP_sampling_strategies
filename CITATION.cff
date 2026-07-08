@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Poelstra"
   given-names: "Gerke"
-title: "Sampling processes for GSP"
+title: "Sampling strategies for GSP"
 version: 1.0.0
 date-released: 2026-07-08
 url: "https://github.com/gerkepoelstra36-rgb/GSP_sampling_strategies"
